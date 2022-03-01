@@ -91,7 +91,7 @@ buttonDown.addEventListener("click", function(){
         smallImgBorder[active].classList.remove("my-border");
         smallImgBorder[active - 1].classList.add("my-border");
 
-        // % almost worked
+        // % almost worked but ..
         /* smallImgBorder[active - 1].classList.remove("my-border");
         smallImgBorder[active - 2].classList.add("my-border"); */
         
