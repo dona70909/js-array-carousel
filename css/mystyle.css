@@ -7,4 +7,17 @@ img{
 .my-col-padding{
     padding-right: 0;
     padding-left: 0;
+    position: relative;
+}
+
+.bi-arrow-up-circle{
+    position: absolute;
+    top:1rem;
+    left: 50%;
+}
+
+.bi-arrow-down-circle{
+    position: absolute;
+    bottom:1rem;
+    left: 50%;
 }
