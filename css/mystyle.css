@@ -1,20 +1,31 @@
-
+/* & img's dimension */
 .my-small-img{
     width: 100%;
     height: 100%;  
 }
-.carousel-element-small{
-    height: 20%;
-}
-.carousel-element-big{
-    height: 100%;
+
+/* & class for the eventListener */
+.my-border{
+    border: .5rem solid white;
 }
 
+/* & big img's dimension */
 .my-big-img{
     height: 100%;
     width: 100%;
 }
 
+/* % img's containers */
+.carousel-element-small{
+    height: 20%;
+}
+
+.carousel-element-big{
+    height: 100%;
+}
+/* % ---- */
+
+/* & title and paragraph */
 .my-title{
     right: 1rem;
     bottom: 6rem;
@@ -26,6 +37,8 @@
     bottom: 2rem;
     text-align: center;
 }
+
+/* # col-8 and col-3 modified */
 
 .my-col-big{
     padding-right: 0;
@@ -43,6 +56,7 @@
     overflow-y: hidden;
 }
 
+/* & icons for the event listener */
 .bi{
     position:absolute;
     left: 50%;
@@ -55,9 +69,6 @@
     height: 2rem; */
 }
 
-.my-border{
-    border: .5rem solid white;
-}
 
 .bi-arrow-up-circle{
     top:1rem;
