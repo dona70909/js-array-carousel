@@ -47,6 +47,8 @@ const buttonUp = document.querySelector(".bi-arrow-up-circle");
 
 /* prendo l'elemento al quale andrò aggiungere la classe .my-border */
 const smallImgBorder = document.getElementsByClassName("my-small-img");
+/* console.log(smallImgBorder); */
+
 /* elemento big img d-none */
 const bigElementCarousel = document.getElementsByClassName("carousel-element-big");
 
@@ -55,8 +57,7 @@ let active = 0;
 
 buttonUp.addEventListener("click", function(){
     
-    
-    if((active > 0) && (active < 5)){
+    if((active > 0) && (active <= smallImgBorder.length)){
         smallImgBorder[active].classList.add("my-border");
         smallImgBorder[active - 1].classList.remove("my-border");
         bigElementCarousel[active].classList.remove("d-none");
@@ -69,23 +70,30 @@ buttonUp.addEventListener("click", function(){
         bigElementCarousel[active].classList.remove("d-none");
         bigElementCarousel[active].classList.add("d-block");
         active++;
-    }
+    }  
     
 });
 
 
-
-//! remove down arrow
-
-/* const buttonDown = document.querySelector(".bi-arrow-down-circle"); */
-const buttonDown = document.getElementById("btn-down");
+/*
+! it doesn't work as i wanted neither inside the previous buttonUp event let active is undefined  
+! at the end of smallImgBorder[5] argh
+*/ 
+const buttonDown = document.querySelector(".bi-arrow-down-circle"); 
 buttonDown.addEventListener("click", function(){
-    
-    if((active >= 0) && (active <= 5)){
-        
-        
+    //! here the active value is as i expected 
+    console.log(active + " before the if");
+
+    if((active >= 0) && (active <= smallImgBorder.length)){
+
+        console.log(smallImgBorder[active] + " inside the if");
+        // ! active value changes inside the if when i'm at the last position
         smallImgBorder[active].classList.remove("my-border");
         smallImgBorder[active - 1].classList.add("my-border");
+
+        // % almost worked
+        /* smallImgBorder[active - 1].classList.remove("my-border");
+        smallImgBorder[active - 2].classList.add("my-border"); */
         
         
         bigElementCarousel[active].classList.add("d-none");
@@ -99,3 +107,4 @@ buttonDown.addEventListener("click", function(){
         console.log("nada");
     }
 });
+
