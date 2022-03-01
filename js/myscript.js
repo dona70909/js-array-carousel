@@ -41,7 +41,7 @@ carouselContainer.innerHTML += carouselContent;
 countryBigImg.innerHTML += elementBigImg;
 
 
-//# prendo i tasti su e giù
+//# prendo il tasto button up
 const buttonUp = document.querySelector(".bi-arrow-up-circle");
 
 
@@ -84,7 +84,7 @@ buttonDown.addEventListener("click", function(){
     //! here the active value is as i expected 
     console.log(active + " before the if");
 
-    if((active >= 0) && (active <= smallImgBorder.length)){
+    if((active >= 0) && (active <= smallImgBorder.length + 1)){
 
         console.log(smallImgBorder[active] + " inside the if");
         // ! active value changes inside the if when i'm at the last position
