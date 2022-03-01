@@ -24,7 +24,7 @@ let elementBigImg = "";
 for (let i = 0 ; i < arraySmallImg.length ; i++){
     carouselContent += `
     <div class="carousel-element-small">
-    <img src="${arraySmallImg[i]}" class="my-small-img my-border" alt="Random picture">
+    <img src="${arraySmallImg[i]}" class="my-small-img" alt="Random picture">
     </div>
     
     `
@@ -32,8 +32,8 @@ for (let i = 0 ; i < arraySmallImg.length ; i++){
     elementBigImg += `
     
     <div class="carousel-element-big position-relative text-white d-none">
-        <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
-        <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
+    <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
+    <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
     <p class="position-absolute my-paragraph "> ${text[i]} </p>
     </div>
     `
@@ -56,10 +56,31 @@ const bigElementCarousel = document.getElementsByClassName("carousel-element-big
 let active = 0;
 
 buttonUp.addEventListener("click", function(){
-
-    smallImgBorder[active].classList.remove("my-border");
-    bigElementCarousel[active].classList.remove("d-none");
-    active++;
-    smallImgBorder[active].classList.add("my-border");
-    bigElementCarousel[active].classList.add("d-block");
+    
+    
+    
+    if((active > 0) && (active < 5)){
+        smallImgBorder[active].classList.add("my-border");
+        smallImgBorder[active - 1].classList.remove("my-border");
+        bigElementCarousel[active].classList.remove("d-none");
+        bigElementCarousel[active - 1].classList.add("d-none");
+        bigElementCarousel[active].classList.add("d-block");
+        bigElementCarousel[active - 1].classList.remove("d-block");
+        active++;
+    } else {
+        smallImgBorder[active].classList.add("my-border");
+        bigElementCarousel[active].classList.remove("d-none");
+        bigElementCarousel[active].classList.add("d-block");
+        active++;
+    }
 });
+
+
+/* //smallImgBorder[active].classList.add("my-border");
+smallImgBorder[active].classList.remove("my-border");
+bigElementCarousel[active].classList.remove("d-none");
+active++;
+smallImgBorder[active].classList.add("my-border");
+//smallImgBorder[active].classList.remove("my-border");
+bigElementCarousel[active].classList.add("d-block");
+//bigElementCarousel[active].classList.remove("d-none"); */
