@@ -23,20 +23,50 @@ let elementBigImg = "";
 // ! inserico gli elementi  
 for (let i = 0 ; i < arraySmallImg.length ; i++){
     carouselContent += `
-    <div class="carousel-element">
-        <img src="${arraySmallImg[i]}" class="my-small-img" alt="Random picture">
-    </div>`
-
+    <i class="bi bi-arrow-up-circle"></i>
+    <div class="carousel-element-small">
+    <img src="${arraySmallImg[i]}" class="my-small-img" alt="Random picture">
+    </div>
+    <i class="bi bi-arrow-down-circle "></i> 
+    `
+    
     elementBigImg += `
-    <div class="carousel-element-big position-relative">
-        <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
-        <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
-    </div>`
+    
+    <div class="carousel-element-big position-relative text-white">
+    <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
+    <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
+    <p class="position-absolute my-paragraph "> ${text[i]} </p>
+    </div>
+    `
 }
 // £ stampo gli elementi costruiti nel ciclo for nel file html
 carouselContainer.innerHTML += carouselContent;
 countryBigImg.innerHTML += elementBigImg;
 
 
+//# prendo i tasti su e giù
+const buttonUp = document.querySelector(".bi-arrow-up-circle");
+
+/* prendo l'elemento al quale andrò aggiungere la classe .my-border */
+const smallImgBorder = document.querySelector(".my-small-img");
 
 
+/* elemento big img d-none */
+const bigImgDisplay = document.querySelector(".my-big-img");
+
+let activeImg = 0;
+buttonUp.addEventListener("click", function(){
+    smallImgBorder.classList.add("my-border");
+    console.log(smallImgBorder);
+});
+
+
+/* for (let i = 0 ; i < arraySmallImg.length ; i++){
+    carouselContent += `
+    <i class="bi bi-arrow-up-circle"></i>
+    <div class="carousel-element-small">
+    <img src="${arraySmallImg[i]}" class="my-small-img my-border" alt="Random picture">
+    </div>
+    <i class="bi bi-arrow-down-circle "></i> 
+    `
+} */

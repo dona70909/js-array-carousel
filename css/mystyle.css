@@ -14,14 +14,21 @@
 
 .my-title{
     right: 1rem;
-    bottom: 4rem;
+    bottom: 6rem;
+    margin-bottom: 1rem;
+}
+
+.my-paragraph{
+    right: 1rem;
+    bottom: 2rem;
+    text-align: center;
 }
 
 .my-col{
     padding-right: 0;
     padding-left: 0;
     position: relative;
-    height: 400px; 
+    height: 590px; 
     overflow-y: hidden;
 }
 
@@ -31,10 +38,14 @@
     font-weight: 900;
     background-color: lightslategray;
     font-size: 2rem;
-
+    cursor: pointer;
     /*   border-radius: 50%; */
     /* width:2rem;
     height: 2rem; */
+}
+
+.my-border{
+    border: 1rem solid white;
 }
 
 .bi-arrow-up-circle{
