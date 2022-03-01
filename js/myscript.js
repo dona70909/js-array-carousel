@@ -58,7 +58,7 @@ let active = 0;
 buttonUp.addEventListener("click", function(){
     
     
-    if((active > 0) && (active <= 5)){
+    if((active > 0) && (active < 5)){
         smallImgBorder[active].classList.add("my-border");
         smallImgBorder[active - 1].classList.remove("my-border");
         bigElementCarousel[active].classList.remove("d-none");
@@ -83,13 +83,16 @@ buttonUp.addEventListener("click", function(){
 
 //! remove down arrow
 
-const buttonDown = document.querySelector(".bi-arrow-down-circle");
+/* const buttonDown = document.querySelector(".bi-arrow-down-circle"); */
+const buttonDown = document.getElementById("btn-down");
 buttonDown.addEventListener("click", function(){
     
-    if((active > 0) && (active <= 5)){
+    if((active >= 0) && (active <= 5)){
+        
         
         smallImgBorder[active].classList.remove("my-border");
         smallImgBorder[active - 1].classList.add("my-border");
+        
         
         bigElementCarousel[active].classList.add("d-none");
         bigElementCarousel[active - 1].classList.remove("d-none");
@@ -98,9 +101,7 @@ buttonDown.addEventListener("click", function(){
         bigElementCarousel[active - 1].classList.add("d-block");
         active--;
         
-    } else if ((active = 0) ){
-        console.log("");
     } else{
-        console.log("");
+        console.log("nada");
     }
 });
