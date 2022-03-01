@@ -45,7 +45,7 @@ countryBigImg.innerHTML += elementBigImg;
 
 //# prendo i tasti su e giù
 const buttonUp = document.querySelector(".bi-arrow-up-circle");
-console.log(buttonUp)
+
 
 /* prendo l'elemento al quale andrò aggiungere la classe .my-border */
 const smallImgBorder = document.getElementsByClassName("my-small-img");
@@ -58,8 +58,7 @@ let active = 0;
 buttonUp.addEventListener("click", function(){
     
     
-    
-    if((active > 0) && (active < 5)){
+    if((active > 0) && (active <= 5)){
         smallImgBorder[active].classList.add("my-border");
         smallImgBorder[active - 1].classList.remove("my-border");
         bigElementCarousel[active].classList.remove("d-none");
@@ -73,14 +72,35 @@ buttonUp.addEventListener("click", function(){
         bigElementCarousel[active].classList.add("d-block");
         active++;
     }
+    
+    
+    
+    
+    
 });
 
 
-/* //smallImgBorder[active].classList.add("my-border");
-smallImgBorder[active].classList.remove("my-border");
-bigElementCarousel[active].classList.remove("d-none");
-active++;
-smallImgBorder[active].classList.add("my-border");
-//smallImgBorder[active].classList.remove("my-border");
-bigElementCarousel[active].classList.add("d-block");
-//bigElementCarousel[active].classList.remove("d-none"); */
+
+//! remove down arrow
+
+const buttonDown = document.querySelector(".bi-arrow-down-circle");
+buttonDown.addEventListener("click", function(){
+    
+    if((active > 0) && (active <= 5)){
+        
+        smallImgBorder[active].classList.remove("my-border");
+        smallImgBorder[active - 1].classList.add("my-border");
+        
+        bigElementCarousel[active].classList.add("d-none");
+        bigElementCarousel[active - 1].classList.remove("d-none");
+        
+        bigElementCarousel[active].classList.remove("d-block");
+        bigElementCarousel[active - 1].classList.add("d-block");
+        active--;
+        
+    } else if ((active = 0) ){
+        console.log("");
+    } else{
+        console.log("");
+    }
+});
