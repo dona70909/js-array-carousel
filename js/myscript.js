@@ -36,7 +36,7 @@ for (let i = 0 ; i < arraySmallImg.length ; i++){
     </div>
     `
 }
-// £ stampo gli elementi costruiti nel ciclo for nel file html
+// # stampo gli elementi costruiti nel ciclo for nel file html
 carouselContainer.innerHTML += carouselContent;
 countryBigImg.innerHTML += elementBigImg;
 
@@ -45,11 +45,11 @@ countryBigImg.innerHTML += elementBigImg;
 const buttonUp = document.querySelector(".bi-arrow-up-circle");
 
 
-/* prendo l'elemento al quale andrò aggiungere la classe .my-border */
+// # prendo l'elemento al quale andrò aggiungere la classe .my-border 
 const smallImgBorder = document.getElementsByClassName("my-small-img");
-/* console.log(smallImgBorder); */
+// todo console.log(smallImgBorder); 
 
-/* elemento big img d-none */
+// # elemento big img d-none 
 const bigElementCarousel = document.getElementsByClassName("carousel-element-big");
 
 
