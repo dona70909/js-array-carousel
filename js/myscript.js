@@ -57,7 +57,7 @@ let active = 0;
 
 buttonUp.addEventListener("click", function(){
     
-    if((active > 0) && (active <= smallImgBorder.length)){
+    if((active > 0) && (active <= smallImgBorder.length + 1)){
         smallImgBorder[active].classList.add("my-border");
         smallImgBorder[active - 1].classList.remove("my-border");
         bigElementCarousel[active].classList.remove("d-none");
@@ -84,7 +84,7 @@ buttonDown.addEventListener("click", function(){
     //! here the active value is as i expected 
     console.log(active + " before the if");
 
-    if((active >= 0) && (active <= smallImgBorder.length + 1)){
+    if((active >= 0) && (active < smallImgBorder.length + 1)){
 
         console.log(smallImgBorder[active] + " inside the if");
         // ! active value changes inside the if when i'm at the last position
@@ -103,7 +103,7 @@ buttonDown.addEventListener("click", function(){
         bigElementCarousel[active - 1].classList.add("d-block");
         active--;
         
-    } else{
+    } else {
         console.log("nada");
     }
 });
