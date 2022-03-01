@@ -24,14 +24,12 @@ let elementBigImg = "";
 for (let i = 0 ; i < arraySmallImg.length ; i++){
     carouselContent += `
     <div class="carousel-element-small">
-    <img src="${arraySmallImg[i]}" class="my-small-img" alt="Random picture">
+    <img src="${arraySmallImg[i]}" class="my-small-img " alt="Random picture">
     </div>
-    
     `
     
     elementBigImg += `
-    
-    <div class="carousel-element-big position-relative text-white d-none">
+    <div class="carousel-element-big position-relative text-white">
     <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
     <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
     <p class="position-absolute my-paragraph "> ${text[i]} </p>
@@ -72,10 +70,6 @@ buttonUp.addEventListener("click", function(){
         bigElementCarousel[active].classList.add("d-block");
         active++;
     }
-    
-    
-    
-    
     
 });
 
