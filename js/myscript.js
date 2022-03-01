@@ -56,10 +56,10 @@ const bigElementCarousel = document.getElementsByClassName("carousel-element-big
 let active = 0;
 
 buttonUp.addEventListener("click", function(){
-
+    
     smallImgBorder[active].classList.remove("my-border");
-    smallImgBorder[active].classList.add("my-border");
     bigElementCarousel[active].classList.remove("d-none");
+    smallImgBorder[active].classList.add("my-border");
     bigElementCarousel[active].classList.add("d-block");
     active++;
 });
