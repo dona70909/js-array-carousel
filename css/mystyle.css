@@ -12,6 +12,11 @@
     width: 100%;
 }
 
+.my-title{
+    right: 1rem;
+    bottom: 4rem;
+}
+
 .my-col{
     padding-right: 0;
     padding-left: 0;

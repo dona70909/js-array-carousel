@@ -1,6 +1,6 @@
 const arraySmallImg = ["img/01.jpg","img/02.jpg","img/03.jpg","img/04.jpg","img/05.jpg"];
 
-const titleBigImg = ["Svezia","Svizzera","Gran Bretagna","Germania","Paradise"];
+const titleBigImgs = ["Svezia","Svizzera","Gran Bretagna","Germania","Paradise"];
 
 
 const text = [
@@ -13,9 +13,12 @@ const text = [
 
 //# prendo il container al quale andrò aggiungere ogni elemento dell'array "arraySmallImg"
 const carouselContainer = document.querySelector(".my-carousel-container");
-
 //% creo una variabile alla quale va inserito l'elemento dell'array(arraySmallImg) all'interno del tag <div>
 let carouselContent = '';
+
+//# la stessa procedura per l'immagine a sinistra in grande
+const countryBigImg = document.querySelector(".my-big-img-container");
+let elementBigImg = "";
 
 // ! inserico gli elementi  
 for (let i = 0 ; i < arraySmallImg.length ; i++){
@@ -23,7 +26,17 @@ for (let i = 0 ; i < arraySmallImg.length ; i++){
     <div class="carousel-element">
         <img src="${arraySmallImg[i]}" class="my-small-img" alt="Random picture">
     </div>`
+
+    elementBigImg += `
+    <div class="carousel-element-big position-relative">
+        <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
+        <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
+    </div>`
 }
 // £ stampo gli elementi costruiti nel ciclo for nel file html
 carouselContainer.innerHTML += carouselContent;
-/* carouselContent.classList.add("my-small-img"); */
+countryBigImg.innerHTML += elementBigImg;
+
+
+
+
