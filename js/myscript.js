@@ -45,9 +45,9 @@ countryBigImg.innerHTML += elementBigImg;
 const buttonUp = document.querySelector(".bi-arrow-up-circle");
 
 
-// # prendo l'elemento al quale andrò aggiungere la classe .my-border 
+// # prendo gli elementi ai quali andrò aggiungere la classe .my-border 
 const smallImgBorder = document.getElementsByClassName("my-small-img");
-// todo console.log(smallImgBorder); 
+console.log(smallImgBorder); 
 
 // # elemento big img d-none 
 const bigElementCarousel = document.getElementsByClassName("carousel-element-big");
@@ -57,7 +57,7 @@ let active = 0;
 
 buttonUp.addEventListener("click", function(){
     
-    if((active > 0) && (active <= smallImgBorder.length + 1)){
+    if((active > 0) && (active <= smallImgBorder.length - 1)){
         smallImgBorder[active].classList.add("my-border");
         smallImgBorder[active - 1].classList.remove("my-border");
         bigElementCarousel[active].classList.remove("d-none");
@@ -84,7 +84,7 @@ buttonDown.addEventListener("click", function(){
     //! here the active value is as i expected 
     console.log(active + " before the if");
 
-    if((active >= 0) && (active < smallImgBorder.length + 1)){
+    if((active >= 0) && (active <= smallImgBorder.length - 1)){
 
         console.log(smallImgBorder[active] + " inside the if");
         // ! active value changes inside the if when i'm at the last position
