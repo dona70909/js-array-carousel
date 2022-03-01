@@ -24,7 +24,7 @@ let elementBigImg = "";
 for (let i = 0 ; i < arraySmallImg.length ; i++){
     carouselContent += `
     <div class="carousel-element-small">
-    <img src="${arraySmallImg[i]}" class="my-small-img" alt="Random picture">
+    <img src="${arraySmallImg[i]}" class="my-small-img my-border" alt="Random picture">
     </div>
     
     `
@@ -56,10 +56,10 @@ const bigElementCarousel = document.getElementsByClassName("carousel-element-big
 let active = 0;
 
 buttonUp.addEventListener("click", function(){
-    
+
     smallImgBorder[active].classList.remove("my-border");
     bigElementCarousel[active].classList.remove("d-none");
+    active++;
     smallImgBorder[active].classList.add("my-border");
     bigElementCarousel[active].classList.add("d-block");
-    active++;
 });
