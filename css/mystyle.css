@@ -2,6 +2,7 @@
 .my-small-img{
     width: 100%;
     height: 100%;  
+    filter: brightness(.4);
 }
 
 /* & class for the eventListener */
@@ -13,6 +14,7 @@
 .my-big-img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 /* % img's containers */
@@ -21,8 +23,9 @@
 }
 
 .carousel-element-big{
+    display: none;
     height: 100%;
-}
+} 
 /* % ---- */
 
 /* & title and paragraph */
@@ -60,6 +63,7 @@
 .bi{
     position:absolute;
     left: 50%;
+    transform: translateX(-50%);
     font-weight: 900;
     background-color: lightslategray;
     font-size: 2rem;
@@ -67,6 +71,7 @@
     /*   border-radius: 50%; */
     /* width:2rem;
     height: 2rem; */
+    z-index: 1;
 }
 
 
@@ -76,4 +81,15 @@
 
 .bi-arrow-down-circle{
     bottom:1rem;
+}
+
+/* active class */
+
+.activeElement-Big{
+    display: block;
+}
+
+.activeElement-Small{
+    filter:brightness(1);
+    border: 3px rgb(197, 197, 197) solid;
 }

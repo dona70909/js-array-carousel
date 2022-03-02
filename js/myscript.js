@@ -45,9 +45,7 @@ countryBigImg.innerHTML += elementBigImg;
 const buttonUp = document.querySelector(".bi-arrow-up-circle");
 
 
-// # prendo gli elementi ai quali andrò aggiungere la classe .my-border 
-const smallImgBorder = document.getElementsByClassName("my-small-img");
-console.log(smallImgBorder); 
+
 
 // # elemento big img d-none 
 const bigElementCarousel = document.getElementsByClassName("carousel-element-big");
@@ -55,23 +53,24 @@ const bigElementCarousel = document.getElementsByClassName("carousel-element-big
 
 let active = 0;
 
+// # prendo gli elementi ai quali andrò aggiungere la classe .my-border 
+document.getElementsByClassName("my-small-img")[active].classList.add("activeElement-Small");
+document.getElementsByClassName("carousel-element-big")[active].classList.add("activeElement-Big");
+
+
 buttonUp.addEventListener("click", function(){
-    
-    if((active > 0) && (active <= smallImgBorder.length - 1)){
-        smallImgBorder[active].classList.add("my-border");
-        smallImgBorder[active - 1].classList.remove("my-border");
-        bigElementCarousel[active].classList.remove("d-none");
-        bigElementCarousel[active - 1].classList.add("d-none");
-        bigElementCarousel[active].classList.add("d-block");
-        bigElementCarousel[active - 1].classList.remove("d-block");
+
+    document.getElementsByClassName("my-small-img")[active].classList.remove("activeElement-Small");
+    document.getElementsByClassName("carousel-element-big")[active].classList.remove("activeElement-Big");
+
+    if(active === arraySmallImg.length - 1){
+        active = 0;
+    } else{
         active++;
-    } else {
-        smallImgBorder[active].classList.add("my-border");
-        bigElementCarousel[active].classList.remove("d-none");
-        bigElementCarousel[active].classList.add("d-block");
-        active++;
-    }  
-    
+    }
+
+    document.getElementsByClassName("my-small-img")[active].classList.add("activeElement-Small");
+    document.getElementsByClassName("carousel-element-big")[active].classList.add("activeElement-Big");
 });
 
 
@@ -81,30 +80,20 @@ buttonUp.addEventListener("click", function(){
 */ 
 const buttonDown = document.querySelector(".bi-arrow-down-circle"); 
 buttonDown.addEventListener("click", function(){
-    //! here the active value is as i expected 
-    console.log(active + " before the if");
 
-    if((active >= 0) && (active <= smallImgBorder.length - 1)){
+    document.getElementsByClassName("my-small-img")[active].classList.remove("activeElement-Small");
+    document.getElementsByClassName("carousel-element-big")[active].classList.remove("activeElement-Big");
 
-        console.log(smallImgBorder[active] + " inside the if");
-        // ! active value changes inside the if when i'm at the last position
-        smallImgBorder[active].classList.remove("my-border");
-        smallImgBorder[active - 1].classList.add("my-border");
-
-        // % almost worked but ..
-        /* smallImgBorder[active - 1].classList.remove("my-border");
-        smallImgBorder[active - 2].classList.add("my-border"); */
-        
-        
-        bigElementCarousel[active].classList.add("d-none");
-        bigElementCarousel[active - 1].classList.remove("d-none");
-        
-        bigElementCarousel[active].classList.remove("d-block");
-        bigElementCarousel[active - 1].classList.add("d-block");
-        active--;
-        
+    if(active === 0){
+        active = arraySmallImg.length - 1;
     } else {
-        console.log("nada");
+        active--;
     }
+
+    document.getElementsByClassName("my-small-img")[active].classList.add("activeElement-Small");
+    document.getElementsByClassName("carousel-element-big")[active].classList.add("activeElement-Big");
 });
+
+
+
 
