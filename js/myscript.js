@@ -29,20 +29,18 @@ for (let i = 0 ; i < arraySmallImg.length ; i++){
     `
     
     elementBigImg += `
-    <div class="carousel-element-big position-relative text-white">
+    <div class="carousel-element-big  text-white">
     <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
-    <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
-    <p class="position-absolute my-paragraph"> ${text[i]} </p>
+    <div class="my-container-text position-relative"> 
+        <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
+        <p class="position-absolute my-paragraph"> ${text[i]} </p>
+    </div> 
     </div>
     `
 }
 // # stampo gli elementi costruiti nel ciclo for nel file html
 carouselContainer.innerHTML += carouselContent;
 countryBigImg.innerHTML += elementBigImg;
-
-
-//# prendo il tasto button up
-const buttonUp = document.querySelector(".bi-arrow-up-circle");
 
 
 
@@ -57,7 +55,8 @@ let active = 0;
 document.getElementsByClassName("my-small-img")[active].classList.add("activeElement-Small");
 document.getElementsByClassName("carousel-element-big")[active].classList.add("activeElement-Big");
 
-
+//# prendo il tasto button up
+const buttonUp = document.getElementById("btn-up");
 buttonUp.addEventListener("click", function(){
 
     document.getElementsByClassName("my-small-img")[active].classList.remove("activeElement-Small");
@@ -85,7 +84,7 @@ buttonUp.addEventListener("click", function(){
 ! it doesn't work as i wanted neither inside the previous buttonUp event let active is undefined  
 ! at the end of smallImgBorder[5] argh
 */ 
-const buttonDown = document.querySelector(".bi-arrow-down-circle"); 
+const buttonDown = document.getElementById("btn-down"); 
 buttonDown.addEventListener("click", function(){
 
     document.getElementsByClassName("my-small-img")[active].classList.remove("activeElement-Small");

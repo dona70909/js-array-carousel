@@ -1,10 +1,13 @@
+
+body{
+    background-color: lightblue;
+}
 /* & img's dimension */
 .my-small-img{
     width: 100%;
     height: 100%;  
     filter: brightness(.4);
 }
-
 
 /* & big img's dimension */
 .my-big-img{
@@ -56,31 +59,36 @@
 }
 
 /* & icons for the event listener */
-.bi{
+.my-btn{
     position:absolute;
     left: 50%;
-    transform: translateX(-50%);
-    font-weight: 900;
-    background-color: lightslategray;
     font-size: 2rem;
+    transform: translateX(-50%); 
     cursor: pointer;
-    /*   border-radius: 50%; */
-    /* width:2rem;
-    height: 2rem; */
     z-index: 1;
 }
 
-
-.bi-arrow-up-circle{
+.my-btn-up{
     top:1rem;
 }
 
-.bi-arrow-down-circle{
+.my-btn-down{
     bottom:1rem;
 }
 
-/* active class */
+button{
+    background-color: rgb(221, 223, 224);
+    border: 1px solid black;
+    border-radius: 50%;
+    width:2.5rem;
+    height: 2.5rem; 
+    text-align: center;
+    line-height: 1.5rem; 
+    opacity:.6;
+}
 
+
+/* # Active class */
 .activeElement-Big{
     display: block;
 }
