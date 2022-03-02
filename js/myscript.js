@@ -32,7 +32,7 @@ for (let i = 0 ; i < arraySmallImg.length ; i++){
     <div class="carousel-element-big position-relative text-white">
     <img src="${arraySmallImg[i]}" class="my-big-img" alt="Random picture">
     <h1 class="position-absolute my-title"> ${titleBigImgs[i]} </h1>
-    <p class="position-absolute my-paragraph "> ${text[i]} </p>
+    <p class="position-absolute my-paragraph"> ${text[i]} </p>
     </div>
     `
 }
