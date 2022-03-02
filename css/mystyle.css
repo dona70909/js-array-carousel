@@ -2,6 +2,7 @@
 body{
     background-color: lightblue;
 }
+
 /* & img's dimension */
 .my-small-img{
     width: 100%;
@@ -46,7 +47,7 @@ body{
     padding-right: 0;
     padding-left: 0;
     position: relative;
-    height:600px; 
+    height:70vh; 
     overflow-y: hidden;
 }
 
@@ -54,7 +55,7 @@ body{
     padding-right: 0;
     padding-left: 0;
     position: relative;
-    height:600px; 
+    height:70vh; 
     overflow-y: hidden;
 }
 
