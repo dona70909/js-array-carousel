@@ -63,6 +63,13 @@ buttonUp.addEventListener("click", function(){
     document.getElementsByClassName("my-small-img")[active].classList.remove("activeElement-Small");
     document.getElementsByClassName("carousel-element-big")[active].classList.remove("activeElement-Big");
 
+    /* 
+        & se active ragginge il valore massimo
+        & ovvero la lunghezza dell'array 
+        & che è la stessa degli elementi aggiunti dinamicamente in js (length = 5 - indici[0-->4])
+        &  ASSEGNO IL VALORE INIZIALE ACTIVE = 0
+        &  ALTRIMENTI CONTINUO A "SCORRERE" E QUINDI AD AGGIORNARE IL VALORE DI ACTIVE
+    */
     if(active === arraySmallImg.length - 1){
         active = 0;
     } else{
