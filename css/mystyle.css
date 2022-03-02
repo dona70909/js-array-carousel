@@ -28,13 +28,13 @@
 .my-title{
     right: 1rem;
     bottom: 6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .my-paragraph{
     right: 1rem;
     bottom: 2rem;
-    text-align: center;
+    padding: 0 1rem;
 }
 
 /* # col-8 and col-3 modified */
