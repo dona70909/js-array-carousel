@@ -91,6 +91,13 @@ buttonDown.addEventListener("click", function(){
     document.getElementsByClassName("my-small-img")[active].classList.remove("activeElement-Small");
     document.getElementsByClassName("carousel-element-big")[active].classList.remove("activeElement-Big");
 
+    /* 
+        & se active SI TROVA NELLA POSIZIONE INIZIALE (0)
+        £ NON POSSO SCENDERE AL DI SOTTO DI ZERO PERCHE' NON CI SONO ELEMENTI!!!
+        £ LENGTH VA ALL' ULTIMA POSIZONE E NON A -1
+        &  AGGIORNO ACTIVE (ACTIVE = LENGTH - 1)
+        &  ALTRIMENTI CONTINUO A "SCORRERE" E QUINDI AD AGGIORNARE IL VALORE DI ACTIVE A ritroso
+    */
     if(active === 0){
         active = arraySmallImg.length - 1;
     } else {
